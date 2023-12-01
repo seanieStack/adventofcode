@@ -1,17 +1,16 @@
-input = []
 with open("input.txt", 'r') as f:
     input = f.readlines()
 
 stringNums = {
-    "one" : '1',
-    "two" : '2',
-    "three" : '3',
-    "four" : '4',
-    "five": '5',
-    "six" : '6',
-    "seven" : '7',
-    "eight" : '8',
-    "nine" : '9' 
+    "one": 'o1e',
+    "two": 't2o',
+    "three": 't3e',
+    "four": 'f4r',
+    "five": 'f5e',
+    "six": 's6x',
+    "seven": 's7n',
+    "eight": 'e8t',
+    "nine": 'n9e'
 }
 
 cleaned_input = []
@@ -23,10 +22,7 @@ for line in input:
 output = []
 for line in cleaned_input:
     output.append("".join(c for c in line if not c.isalpha()))
-sum = 0
-for line in output:
-    sum += int(line[0] + line[-1])
+
+sum = sum(int(line[0] + line[-1]) for line in output)
 
 print(sum)
-
-
