@@ -23,6 +23,4 @@ output = []
 for line in cleaned_input:
     output.append("".join(c for c in line if not c.isalpha()))
 
-sum = sum(int(line[0] + line[-1]) for line in output)
-
-print(sum)
+print(sum(int(line[0] + line[-1]) for line in output))
